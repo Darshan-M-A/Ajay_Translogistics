@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <rect width="1200" height="600" fill="#1a1f3a"/>
+  <rect x="200" y="200" width="800" height="250" rx="12" fill="#2d3561"/>
+  <rect x="250" y="260" width="300" height="40" rx="4" fill="#3b4580"/>
+  <rect x="250" y="320" width="200" height="30" rx="4" fill="#3b4580"/>
+  <text x="600" y="180" text-anchor="middle" font-family="sans-serif" font-size="36" fill="#6b7db3" opacity="0.5">About Hero</text>
+</svg>

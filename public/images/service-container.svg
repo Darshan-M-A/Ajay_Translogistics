@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#eef0f5"/>
+  <rect x="150" y="200" width="500" height="200" rx="12" fill="#c5cbe0"/>
+  <rect x="180" y="180" width="120" height="220" rx="8" fill="#a0aac4"/>
+  <rect x="330" y="180" width="120" height="220" rx="8" fill="#a0aac4"/>
+  <rect x="480" y="180" width="120" height="220" rx="8" fill="#a0aac4"/>
+  <text x="400" y="140" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#4a5599" opacity="0.6">Containerized Delivery</text>
+</svg>

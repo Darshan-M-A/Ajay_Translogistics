@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="400" viewBox="0 0 560 400">
+  <rect width="560" height="400" fill="#e8eaf0"/>
+  <rect x="80" y="150" width="400" height="150" rx="10" fill="#c5cbe0"/>
+  <circle cx="180" cy="140" r="30" fill="#a0aac4"/>
+  <circle cx="380" cy="140" r="30" fill="#a0aac4"/>
+  <text x="280" y="100" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#8892b3" opacity="0.6">Logistics Excellence</text>
+</svg>
