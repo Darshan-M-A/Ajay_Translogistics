@@ -16,7 +16,7 @@ export function Footer() {
               <span className="text-lg font-bold text-navy-foreground">{COMPANY.name}</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-foreground/70">
-              With over {currentYear - COMPANY.foundedYear}+ years of experience, we provide top-tier logistics solutions that drive business growth through reliability and efficiency.
+              With over 19+ years of experience, we provide top-tier logistics solutions that drive business growth through reliability and efficiency.
             </p>
 
           </div>
