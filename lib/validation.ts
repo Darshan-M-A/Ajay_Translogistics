@@ -1,4 +1,4 @@
-import type { QuoteFormData, FormStepError } from "./types"
+import type { QuoteFormData, LRFormData, FormStepError } from "./types"
 
 // ─── Validators ──────────────────────────────────────────────────────────────
 
@@ -61,6 +61,46 @@ export function validateQuickQuote(name: string, phone: string): FormStepError {
         errors.phone = "Phone number is required"
     } else if (!isValidPhone(phone)) {
         errors.phone = "Please enter a valid phone number"
+    }
+
+    return errors
+}
+
+// ─── LR Generation Validation ────────────────────────────────────────────────
+
+export function validateLRForm(data: LRFormData): FormStepError {
+    const errors: FormStepError = {}
+
+    if (!data.lrNumber.trim()) {
+        errors.lrNumber = "LR Number is required"
+    }
+
+    if (!data.date.trim()) {
+        errors.date = "Date is required"
+    }
+
+    if (!data.consignorName.trim()) {
+        errors.consignorName = "Consignor name is required"
+    }
+
+    if (!data.consigneeName.trim()) {
+        errors.consigneeName = "Consignee name is required"
+    }
+
+    if (!data.from.trim()) {
+        errors.from = "Origin is required"
+    }
+
+    if (!data.to.trim()) {
+        errors.to = "Destination is required"
+    }
+
+    if (!data.truckNumber.trim()) {
+        errors.truckNumber = "Truck number is required"
+    }
+
+    if (!data.goodsDescription.trim()) {
+        errors.goodsDescription = "Goods description is required"
     }
 
     return errors

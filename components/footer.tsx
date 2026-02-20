@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <LogoIcon className="h-8 w-8" />
+              <LogoIcon className="h-12 w-20" />
               <span className="text-lg font-bold text-navy-foreground">{COMPANY.name}</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-foreground/70">
@@ -102,7 +102,10 @@ export function Footer() {
 
         <div className="mt-8 border-t border-navy-foreground/10 pt-6">
           <p className="text-center text-xs text-navy-foreground/50">
-            &copy; {currentYear} {COMPANY.legalName}. All rights reserved. CIN: {COMPANY.cin}
+            &copy; {currentYear} {COMPANY.legalName}. All rights reserved.
+          </p>
+          <p className="mt-1 text-center text-xs text-navy-foreground/40">
+            CIN: {COMPANY.cin} | GST: {COMPANY.gst} | PAN: {COMPANY.pan} | TAN: {COMPANY.tan}
           </p>
         </div>
       </div>

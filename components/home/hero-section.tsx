@@ -30,17 +30,17 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-6 max-w-lg text-base leading-relaxed text-navy-foreground/80 md:text-lg">
-            Reliable freight forwarding and logistics solutions tailored for your business with over {new Date().getFullYear() - COMPANY.foundedYear} years of operational excellence.
+            Reliable freight forwarding and logistics solutions tailored for your business with over 19+ years of operational excellence.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="gap-2">
-              <Link href="/contact">
+              <Link href="/enquiry">
                 Request a Quote <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-navy-foreground/10 text-navy-foreground border-navy-foreground/20 hover:bg-navy-foreground/20 hover:text-navy-foreground">
-              <Link href="/#services">Our Services</Link>
+              <Link href="/services">Our Services</Link>
             </Button>
           </div>
         </div>

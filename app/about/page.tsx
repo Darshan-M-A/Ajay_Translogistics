@@ -25,7 +25,7 @@ function AboutHero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/about-hero.jpg"
+          src="/images/hero-trucks.jpg"
           alt="Ajay Translogistics headquarters"
           fill
           className="object-cover"
@@ -124,6 +124,18 @@ function JourneySection() {
                 <div>
                   <p className="text-muted-foreground">GST Registration</p>
                   <p className="font-medium text-foreground">{COMPANY.gst}</p>
+                </div>
+                <div>
+                  <p className="text-muted-foreground">PAN</p>
+                  <p className="font-medium text-foreground">{COMPANY.pan}</p>
+                </div>
+                <div>
+                  <p className="text-muted-foreground">TAN</p>
+                  <p className="font-medium text-foreground">{COMPANY.tan}</p>
+                </div>
+                <div>
+                  <p className="text-muted-foreground">Incorporation Date</p>
+                  <p className="font-medium text-foreground">{COMPANY.incorporationDate}</p>
                 </div>
               </div>
             </div>

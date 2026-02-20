@@ -68,173 +68,107 @@ export function ContactPageClient() {
 
   return (
     <div className="bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-10 lg:px-8 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[380px_1fr] lg:gap-16">
-          {/* Left Sidebar */}
-          <div>
-            <div className="mb-2 inline-flex items-center gap-2 rounded-md border border-primary/20 bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              <Mail className="h-3.5 w-3.5" />
-              Contact Us
-            </div>
-            <h1 className="mt-3 text-3xl font-bold text-foreground md:text-4xl text-balance">
-              {"Let's move your business forward."}
-            </h1>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-              Reach out to our Bangalore headquarters directly or fill out the quote request form. Our team responds within 2 hours.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4">
-              <div className="rounded-xl border border-border bg-card p-5">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                      Helpline ({COMPANY.contacts.helpline.name})
-                    </p>
-                    <a href={`tel:${COMPANY.contacts.helpline.phone}`} className="mt-1 block text-lg font-bold text-card-foreground">
-                      {COMPANY.contacts.helpline.display}
-                    </a>
-                    <p className="text-xs text-muted-foreground">{COMPANY.contacts.helpline.availability}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-border bg-card p-5">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                    <Truck className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                      Operations ({COMPANY.contacts.operations.name})
-                    </p>
-                    <a href={`tel:${COMPANY.contacts.operations.phone}`} className="mt-1 block text-lg font-bold text-card-foreground">
-                      {COMPANY.contacts.operations.display}
-                    </a>
-                    <p className="text-xs text-muted-foreground">{COMPANY.contacts.operations.availability}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
-                <div>
-                  <h3 className="font-semibold text-foreground">Bangalore Headquarters</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-primary">
-                    {COMPANY.address.full}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-4 overflow-hidden rounded-xl border border-border">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.49085452697098!3d12.953847716438836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1706000000000"
-                  width="100%"
-                  height="200"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Bangalore headquarters location"
-                  className="w-full"
-                />
-              </div>
-            </div>
+      <div className="mx-auto max-w-4xl px-4 py-10 lg:px-8 lg:py-16">
+        <div className="text-center mb-10">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-md border border-primary/20 bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+            <Mail className="h-3.5 w-3.5" />
+            Get a Quote
           </div>
+          <h1 className="mt-3 text-3xl font-bold text-foreground md:text-4xl text-balance">
+            {"Let's move your business forward."}
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Fill out the quote request form below with your requirements, and our team will get back to you within 2 hours with a tailored logistics plan.
+          </p>
+        </div>
 
-          {/* Right Form */}
-          <div>
-            {/* Stepper */}
-            <div className="mb-8 flex items-center justify-center">
-              {FORM_STEPS.map((step, index) => (
-                <div key={step.id} className="flex items-center">
-                  <div className="flex flex-col items-center">
-                    <button
-                      onClick={() => {
-                        if (step.id < currentStep) {
-                          setCurrentStep(step.id)
-                          setErrors({})
-                        }
-                      }}
-                      className={cn(
-                        "flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-colors",
-                        currentStep > step.id
-                          ? "bg-primary text-primary-foreground"
-                          : currentStep === step.id
-                            ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
-                            : "border-2 border-border text-muted-foreground"
-                      )}
-                      aria-label={`Step ${step.id}: ${step.label}`}
-                    >
-                      {currentStep > step.id ? (
-                        <CheckCircle2 className="h-5 w-5" />
-                      ) : (
-                        step.id
-                      )}
-                    </button>
-                    <span
-                      className={cn(
-                        "mt-2 text-xs font-semibold tracking-wider",
-                        currentStep >= step.id ? "text-primary" : "text-muted-foreground"
-                      )}
-                    >
-                      {step.label}
-                    </span>
-                  </div>
-                  {index < FORM_STEPS.length - 1 && (
-                    <div
-                      className={cn(
-                        "mx-3 h-0.5 w-16 rounded-full md:w-24",
-                        currentStep > step.id ? "bg-primary" : "bg-border"
-                      )}
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {submitted ? (
-              <SuccessMessage />
-            ) : (
-              <>
-                {currentStep === 1 && (
-                  <StepContact formData={formData} updateField={updateField} errors={errors} />
-                )}
-                {currentStep === 2 && (
-                  <StepShipment formData={formData} updateField={updateField} errors={errors} />
-                )}
-                {currentStep === 3 && (
-                  <StepReview formData={formData} />
-                )}
-
-                <div className="mt-8 flex items-center justify-between border-t border-border pt-6">
+        <div className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm">
+          {/* Stepper */}
+          <div className="mb-10 flex items-center justify-center">
+            {FORM_STEPS.map((step, index) => (
+              <div key={step.id} className="flex items-center">
+                <div className="flex flex-col items-center">
                   <button
-                    onClick={() => { setCurrentStep((prev) => Math.max(1, prev - 1)); setErrors({}) }}
+                    onClick={() => {
+                      if (step.id < currentStep) {
+                        setCurrentStep(step.id)
+                        setErrors({})
+                      }
+                    }}
                     className={cn(
-                      "flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                      currentStep === 1 && "invisible"
+                      "flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-colors",
+                      currentStep > step.id
+                        ? "bg-primary text-primary-foreground"
+                        : currentStep === step.id
+                          ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
+                          : "border-2 border-border text-muted-foreground"
+                    )}
+                    aria-label={`Step ${step.id}: ${step.label}`}
+                  >
+                    {currentStep > step.id ? (
+                      <CheckCircle2 className="h-5 w-5" />
+                    ) : (
+                      step.id
+                    )}
+                  </button>
+                  <span
+                    className={cn(
+                      "mt-2 text-xs font-semibold tracking-wider",
+                      currentStep >= step.id ? "text-primary" : "text-muted-foreground"
                     )}
                   >
-                    <ArrowLeft className="h-4 w-4" /> Back
-                  </button>
-
-                  {currentStep < 3 ? (
-                    <Button onClick={handleNext} className="gap-2">
-                      Next Step <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  ) : (
-                    <Button onClick={handleSubmit} className="gap-2">
-                      Submit Request <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  )}
+                    {step.label}
+                  </span>
                 </div>
-              </>
-            )}
+                {index < FORM_STEPS.length - 1 && (
+                  <div
+                    className={cn(
+                      "mx-3 h-0.5 w-16 rounded-full md:w-32",
+                      currentStep > step.id ? "bg-primary" : "bg-border"
+                    )}
+                  />
+                )}
+              </div>
+            ))}
           </div>
+
+          {submitted ? (
+            <SuccessMessage />
+          ) : (
+            <>
+              {currentStep === 1 && (
+                <StepContact formData={formData} updateField={updateField} errors={errors} />
+              )}
+              {currentStep === 2 && (
+                <StepShipment formData={formData} updateField={updateField} errors={errors} />
+              )}
+              {currentStep === 3 && (
+                <StepReview formData={formData} />
+              )}
+
+              <div className="mt-10 flex items-center justify-between border-t border-border pt-6">
+                <button
+                  onClick={() => { setCurrentStep((prev) => Math.max(1, prev - 1)); setErrors({}) }}
+                  className={cn(
+                    "flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+                    currentStep === 1 && "invisible"
+                  )}
+                >
+                  <ArrowLeft className="h-4 w-4" /> Back
+                </button>
+
+                {currentStep < 3 ? (
+                  <Button onClick={handleNext} className="gap-2">
+                    Next Step <ArrowRight className="h-4 w-4" />
+                  </Button>
+                ) : (
+                  <Button onClick={handleSubmit} className="gap-2">
+                    Submit Request <ArrowRight className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
 

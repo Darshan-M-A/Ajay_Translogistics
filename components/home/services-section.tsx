@@ -17,7 +17,7 @@ export function ServicesSection() {
             </h2>
           </div>
           <Link
-            href="/contact"
+            href="/enquiry"
             className="flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
           >
             Get a Quote <ArrowRight className="h-4 w-4" />
@@ -47,7 +47,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                 >
                   Learn More <ArrowRight className="h-3.5 w-3.5" />
